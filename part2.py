@@ -12,9 +12,9 @@ pdf_File = open('name.pdf', 'rb')
 pdf_Reader = PyPDF2.PdfFileReader(pdf_File)
 count = pdf_Reader.numPages # counts number of pages in pdf
 textList = []
-
+print(count)
 #Extracting text data from each page of the pdf file
-for i in range(count):
+for i in range(count-1):
    try:
     page = pdf_Reader.getPage(i)    
     textList.append(page.extractText())
@@ -34,3 +34,4 @@ myAudio = gTTS(text=textString, lang=language, slow=False)
 
 #Save as mp3 file
 myAudio.save("Audio.mp3")
+print(myAudio)
