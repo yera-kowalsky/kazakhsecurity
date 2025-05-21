@@ -28,7 +28,7 @@ def alarm():
 		# Get current time
 		current_time = datetime.datetime.now().strftime("%H:%M:%S")
 		print(current_time,set_alarm_time)
-
+		print(current_time)
 		# Check whether set alarm is equal to current time or not
 		if current_time == set_alarm_time:
 			print("Time to Wake up")
@@ -49,7 +49,7 @@ hours = ('00', '01', '02', '03', '04', '05', '06', '07',
 		)
 hour.set(hours[0])
 
-hrs = OptionMenu(frame, hour, *hours)
+hrs = OptionMenu(frame, hour, *hours, days, nights, years)
 hrs.pack(side=LEFT)
 
 minute = StringVar(root)
@@ -65,7 +65,7 @@ minute.set(minutes[0])
 
 mins = OptionMenu(frame, minute, *minutes)
 mins.pack(side=LEFT)
-
+print(mins)
 second = StringVar(root)
 seconds = ('00', '01', '02', '03', '04', '05', '06', '07',
 		'08', '09', '10', '11', '12', '13', '14', '15',
@@ -76,11 +76,13 @@ seconds = ('00', '01', '02', '03', '04', '05', '06', '07',
 		'48', '49', '50', '51', '52', '53', '54', '55',
 		'56', '57', '58', '59', '60')
 second.set(seconds[0])
-
+print(second)
 secs = OptionMenu(frame, second, *seconds)
 secs.pack(side=LEFT)
+print(secs)
 
 Button(root,text="Set Alarm",font=("Helvetica 15"),command=Threading).pack(pady=20)
 
 # Execute Tkinter
 root.mainloop()
+root.mainloop(23)
